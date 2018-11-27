@@ -5,6 +5,4 @@
  * @author Andreas Gohr <andi@splitbrain.org>
  */
 
-
-//$meta['fixme'] = array('string');
-
+$meta['verify'] = array('string');

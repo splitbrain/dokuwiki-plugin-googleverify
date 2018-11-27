@@ -23,8 +23,8 @@ class action_plugin_googleverify extends DokuWiki_Action_Plugin
      */
     public function register(Doku_Event_Handler $controller)
     {
-        $controller->register_hook('TPL_METAHEADER_OUTPUT', 'FIXME', $this, 'handle_tpl_metaheader_output');
-   
+        $controller->register_hook('TPL_METAHEADER_OUTPUT', 'BEFORE', $this, 'handle_tpl_metaheader_output');
+
     }
 
     /**
@@ -32,14 +32,21 @@ class action_plugin_googleverify extends DokuWiki_Action_Plugin
      *
      * Called for event:
      *
-     * @param Doku_Event $event  event object by reference
-     * @param mixed      $param  [the parameters passed as fifth argument to register_hook() when this
+     * @param Doku_Event $event event object by reference
+     * @param mixed $param [the parameters passed as fifth argument to register_hook() when this
      *                           handler was registered]
      *
      * @return void
      */
     public function handle_tpl_metaheader_output(Doku_Event $event, $param)
     {
+        $code = $this->getConf('verify');
+        if (empty($code)) return;
+
+        $event->data["meta"][] = array(
+            "name" => "google-site-verification",
+            "content" => $code,
+        );
     }
 
 }

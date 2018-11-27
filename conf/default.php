@@ -5,5 +5,5 @@
  * @author Andreas Gohr <andi@splitbrain.org>
  */
 
-//$conf['fixme']    = 'FIXME';
+$conf['verify']    = '';
 
