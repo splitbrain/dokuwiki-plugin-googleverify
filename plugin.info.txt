@@ -1,0 +1,7 @@
+base   googleverify
+author Andreas Gohr
+email  andi@splitbrain.org
+date   2018-11-27
+name   googleverify plugin
+desc   Verify your wiki for Google Search Console
+url    https://www.dokuwiki.org/plugin:googleverify
